@@ -1,0 +1,42 @@
+create database db30;
+create table branch(
+    br_id int primary key auto_increment,
+    br_name varchar(20),
+    br_addr varchar(300));
+create table employee45(
+    emp_id int primary key,
+    emp_name varchar(30),
+    emp_jobdescript varchar(30),
+    emp_sal int,
+    br_id int,
+	constraint fk_br_id foreign key(br_id) references branch(br_id));
+INSERT INTO branch VALUES
+   (1,"Chennai","16 ABC Road"),
+   (2,"Coimbatore","120 15th Block"),
+   (3,"Mumbai","25 XYZ Road"),
+   (4,"Hydrabad","32 10th Street");
+
+INSERT INTO employee45 VALUES
+    (1,'Ram','ADMIN',1000000,2),
+	(2,'Harini','MANAGER',2500000,2),
+	(3,'George','SALES',2000000,1),
+    (4,'Ramya','SALES',1300000,2),
+    (5,'Meena','HR',2000000,3),
+    (6,'Ashok','MANAGER',3000000,1),
+    (7,'Abdul','HR',2000000,1),
+    (8,'Ramya','ENGINEER',1000000,2),
+    (9,'Raghu','CEO',8000000,3),
+	(10,'Arvind','MANAGER',2800000,3),
+	(11,'Akshay','ENGINEER',1000000,1),
+	(12,'John','ADMIN',2200000,1),
+	(13,'Abinaya','ENGINEER',2100000,2),
+	(14,'Vidya','ADMIN',2200000,NULL),
+	(15,'Ranjani','ENGINEER',2100000,NULL);
+select* from branch;
+select*from employee45;
+select employee45.emp_id,employee45.emp_name,employee45.emp_jobdescript,branch.br_id from employee45
+inner join branch on employee45.br_id=branch.br_id order by emp_id;
+select employee45.emp_id,employee45.emp_name,employee45.emp_jobdescript,branch.br_id from employee45
+inner join branch on employee45.br_id=branch.br_id order by emp_id;
+select employee45.emp_id,employee45.emp_name,employee45.emp_jobdescript,branch.br_id from employee45
+inner join branch on employee45.br_id=branch.br_id order by emp_id;
