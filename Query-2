@@ -1,0 +1,34 @@
+create database db5;
+create table employee13(
+    emp_id int primary key,
+    emp_name varchar(20),
+    emp_sal int,
+    emp_discript text);
+insert into employee13 values
+    (1,"aaa","180000","Manager"),
+    (2,"aba","150000","Receptionist"),
+    (3,"ccr","140000","Tester"),
+    (4,"ddd","155000","Manager"),
+    (5,"eee","165000","Teamlead"),
+    (6,"fff","200000","Admin"),
+    (7,"ggg","190000","Manager"),
+    (8,"hmh","180000","Manager"),
+    (9,"iii","170000","HR"),
+    (10,"jjj","165000","Developer");
+select *from employee13 where emp_name="jjj";
+select emp_id,emp_name,emp_sal,emp_discript from employee1
+     where emp_sal>150000;
+select emp_id,emp_name,emp_sal,emp_discript from employee1
+	where emp_sal>150000 and emp_discript="Manager";
+select emp_id,emp_name,emp_sal,emp_discript from employee1
+	where emp_sal between 150000 and 200000;
+select emp_id,emp_name,emp_sal,emp_discript from employee1
+    where emp_discript in ("Admin","HR");
+select *from employee13 where emp_name like "A%";
+select *from employee13 where emp_name like "R%a";
+select *from employee13 where emp_name like "%r";
+select *from employee13 where emp_name like "%i%";
+select *from employee13 where emp_name like "__a%";
+select * from employee13 order by emp_sal;
+select * from employee13 order by emp_sal asc;
+select * from employee13 order by emp_sal desc;
